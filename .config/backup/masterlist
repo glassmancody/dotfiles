@@ -1,0 +1,48 @@
+{
+    "path_base": "/home/cody/",
+    "locations" : [
+		{
+			"description": "Misc backups",
+			"path": "Backups"
+		},
+        {
+            "description": "Custom local systemd service files",
+            "path": ".config/systemd/user/"
+        },
+        {
+            "description": "Music",
+            "path": "Music/"
+        },
+        {
+            "description": "Ebooks",
+            "path": "Ebooks/"
+        },
+        {
+            "description": "Documents",
+            "path": "Documents/"
+        },
+        {
+            "description": "Pictures",
+            "path": "Pictures/"
+        },
+        {
+            "description": "Videos",
+            "path": "Videos/"
+        },
+        {
+            "description": "Templates",
+            "path": "Templates/"
+        },
+        {
+            "description": "Custom local scripts",
+            "path": "bin/"
+        },
+        {
+            "description": "Custom local fonts",
+            "path": ".local/share/fonts/"
+        }
+    ],
+    "data": {
+        "url_trizen": "https://aur.archlinux.org/cgit/aur.git/snapshot/trizen.tar.gz"
+    }
+}

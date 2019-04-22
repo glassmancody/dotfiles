@@ -1,0 +1,10 @@
+font=Avenir LT Std 12
+background-color=#282a36
+text-color=#f8f8f2
+border-color=#22242d
+border-size=5
+border-radius=2
+padding=20
+height=300
+width=400
+format=<span font_family="Avenir LT Std 55 Roman" size="14000" >%s</span>\n\n<span font_family="Avenir LT Std 35 Light">%b</span>

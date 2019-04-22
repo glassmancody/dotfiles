@@ -1,0 +1,30 @@
+directory: /home/cody/Music
+library: /home/cody/.config/beets/musiclibrary.db
+per_disc_numbering: no
+original_date: no
+threaded: yes
+
+import:
+    move: yes 
+    copy: yes
+    resume: ask
+    incremental: yes
+    timid: no 
+    log: /home/cody/.config/beets/beet.log
+    group_albums: no
+
+ui:
+    color: yes
+
+paths: 
+    default: $artist/$album/$title
+
+plugins: mpdupdate convert
+
+convert:    
+        never_convert_lossy_files: yes
+        copy_album_art: yes
+
+mpd:
+        host: localhost
+        port: 6600

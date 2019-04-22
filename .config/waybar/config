@@ -1,0 +1,89 @@
+{
+    "layer": "top",
+    "height": 35,
+    "position": "bottom",
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["custom/mpd"],
+    "modules-right": ["custom/redshift","custom/idle","pulseaudio","battery","custom/cpu_govenor","network", "clock", "tray"],
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "format": "{name}"
+    },  
+    "sway/window": {
+        "max-length": 100
+    },
+    "sway/mode": {
+        "format": "<span style='italic'>{}</span>"
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "custom/mpd": {
+        "format": "{}",
+        "max-length": 80,
+        "interval": 10, 
+        "exec": "echo $(mpc current) | sed 's/&/&amp;/g'", 
+        "exec-if": "pgrep mpd",
+        "on-click": "mpc toggle",
+        "signal": 8
+    },
+    "custom/redshift": {
+        "return-type": "json",
+        "format": "{}",
+        "max-length": 100,
+        "interval": "once", 
+        "exec": "$HOME/bin/waybar_redshift",
+        "on-click": "$HOME/bin/waybar_redshift toggle",
+        "signal": 8
+    },
+    "custom/idle": {
+        "return-type": "json",
+        "format": "{}",
+        "interval": "once",
+        "exec": "$HOME/bin/waybar_idle",
+        "on-click": "$HOME/bin/waybar_idle toggle",
+        "signal": 8
+    },
+    "custom/cpu_govenor": {
+        "format": "{}",
+        "interval": 60,
+        "exec": "cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor"
+    },
+    "clock": {
+        "interval": 10,
+        "format": "{:%a %l:%M %p}"
+    },
+    "network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "  {ifname}: {ipaddr}/{cidr}",
+        "format-disconnected": "⚠   Disconnected",
+        "on-click": "nm-connection-editor"
+    },
+    "pulseaudio": {
+        "scroll-step": 10,
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "{icon}‭    {volume}%", 
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "battery": {
+      "interval": 10,
+      "states": {
+          "warning": 30,
+          "critical": 10
+      },
+      "format": "{icon}  {capacity}%",
+      "format-charging": "<span fgcolor='#45c3d1'></span>  {capacity}%",
+      "format-discharging": "{icon}  {capacity}%",
+      "format-full": "{icon}",
+      "format-icons": ["", "", "", "", ""]
+    }
+}
